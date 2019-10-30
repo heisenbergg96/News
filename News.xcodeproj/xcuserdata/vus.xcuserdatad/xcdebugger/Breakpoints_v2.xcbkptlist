@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "AAD433E2-F852-490A-9982-1D96063B4AED"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "3D474DA8-EC3D-42C2-B35F-B2E3F0D532EB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -22,16 +24,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D781A32D-8A5A-4691-A506-808F888D6D5D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "News/Views/NewsCell.swift"
-            timestampString = "587984920.5174741"
+            filePath = "News/Helper/Extensions.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "layoutSubviews()"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "downloaded(from:contentMode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D781A32D-8A5A-4691-A506-808F888D6D5D - 3cf49312c4b5ac76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in News):__C.UIImageView.(downloaded in _AEDD7CA4E51629B92FD7DDA2EB88CF25)(from: Foundation.URL, contentMode: __C.UIViewContentMode) -&gt; ()"
+                  moduleName = "News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vus/News/News/Helper/Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "D781A32D-8A5A-4691-A506-808F888D6D5D - bfc534a176cf85d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in (extension in News):__C.UIImageView.(downloaded in _AEDD7CA4E51629B92FD7DDA2EB88CF25)(from: Foundation.URL, contentMode: __C.UIViewContentMode) -&gt; ()"
+                  moduleName = "News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vus/News/News/Helper/Extensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96FA6293-F3B2-475C-A5D6-138C15CC1713"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "News/Views/Cells/NewsCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "setupCell(viewModel:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

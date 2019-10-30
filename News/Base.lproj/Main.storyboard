@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HMA-RV-5Nx">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-18-XLB">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iz9-NW-Xdw">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iz9-NW-Xdw" customClass="NewsCellLayout" customModule="News" customModuleProvider="target">
                                     <size key="itemSize" width="375" height="245"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -74,7 +73,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="JE5-Vt-qAs" id="07i-i0-DTd"/>
                                             <outlet property="descriptionLabel" destination="Xhq-JV-K0Q" id="T6g-qC-5ZB"/>
-                                            <outlet property="imageView" destination="bhm-fW-4Bw" id="eKX-5B-S9d"/>
+                                            <outlet property="imageView" destination="bhm-fW-4Bw" id="666-GK-866"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -85,10 +84,10 @@
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ya6-18-XLB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GRF-pz-efo"/>
+                            <constraint firstItem="Ya6-18-XLB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EWZ-ya-8Bv"/>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Okg-8b-ffv"/>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBi-yg-4oh"/>
-                            <constraint firstItem="Ya6-18-XLB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uVh-iP-PaJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Ya6-18-XLB" secondAttribute="bottom" id="syi-MO-jPn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -99,25 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537" y="-144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dGa-lO-uQd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HMA-RV-5Nx" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hzu-k1-W2O">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ma1-mU-7iI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OhO-FX-l3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-292" y="-144"/>
+            <point key="canvasLocation" x="-3039" y="-470"/>
         </scene>
     </scenes>
     <resources>

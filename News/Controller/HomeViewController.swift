@@ -12,23 +12,16 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var newsCollectionView: UICollectionView!
     var news: News?
+    let newsViewModel = NewsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         newsCollectionView.contentInset = UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
         newsCollectionView.setCollectionViewLayout(NewsCellLayout(), animated: false)
-        navigationItem.largeTitleDisplayMode = .always
-        navigationItem.title = "News"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        newsCollectionView.backgroundColor = UIColor(red: 214/255, green: 219/255, blue: 240/255, alpha: 1)
-        Service().fetchNews(country: .UK) { [weak self] (error, news) in
+//        newsCollectionView.backgroundColor = .red
+        newsViewModel.newsListViewModel.addObserver(fireNow: false) { [weak self] (_) in
             
-            if let err = error {
-                print(err.localizedDescription)
-                return
-            }
-            self?.news = news
             DispatchQueue.main.async {
                 self?.newsCollectionView.reloadData()
             }
@@ -37,11 +30,13 @@ class HomeViewController: UIViewController {
     
 }
 
+
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(newsViewModel.newsListViewModel.value.count)
+        return newsViewModel.newsListViewModel.value.count
         
-        return news?.articles.count ?? 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,9 +45,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return UICollectionViewCell()
         }
         
-        cell.setupCell(viewModel: news?.articles[indexPath.row])
+        cell.setupCell(viewModel: newsViewModel.newsListViewModel.value[indexPath.row])
+        
         return cell
     }
-    
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        CGSize(width: newsCollectionView.frame.width - 40, height: 350)
+//    }
 }
 
