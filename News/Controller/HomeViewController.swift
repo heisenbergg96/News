@@ -19,7 +19,6 @@ class HomeViewController: UIViewController {
         
         newsCollectionView.contentInset = UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
         newsCollectionView.setCollectionViewLayout(NewsCellLayout(), animated: false)
-//        newsCollectionView.backgroundColor = .red
         newsViewModel.newsListViewModel.addObserver(fireNow: false) { [weak self] (_) in
             
             DispatchQueue.main.async {
@@ -27,9 +26,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
 }
-
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -49,10 +46,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         return cell
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        CGSize(width: newsCollectionView.frame.width - 40, height: 350)
-//    }
+
 }
 

@@ -14,7 +14,6 @@ class NewsCellLayout: UICollectionViewFlowLayout {
         super.init()
         minimumLineSpacing = 40
         estimatedItemSize = CGSize(width: collectionView?.frame.width ?? UIScreen.main.bounds.width - 40, height: 400)
-        collectionView?.backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {
