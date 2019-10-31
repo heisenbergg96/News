@@ -8,9 +8,11 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseVC {
     
+    @IBOutlet weak var collectionViewtopConstraint: NSLayoutConstraint!
     @IBOutlet weak var newsCollectionView: UICollectionView!
+    
     var news: News?
     let newsViewModel = NewsViewModel()
     
@@ -19,6 +21,9 @@ class HomeViewController: UIViewController {
         
         newsCollectionView.contentInset = UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
         newsCollectionView.setCollectionViewLayout(NewsCellLayout(), animated: false)
+        navBar.setUpNavTitle(title: "News")
+        
+        collectionViewtopConstraint.constant = navigationBarHeight
         newsViewModel.newsListViewModel.addObserver(fireNow: false) { [weak self] (_) in
             
             DispatchQueue.main.async {
@@ -43,9 +48,41 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         
         cell.setupCell(viewModel: newsViewModel.newsListViewModel.value[indexPath.row])
-        
         return cell
     }
+    
+    fileprivate func animateNavBar(_ scrollView: UIScrollView) {
+        let disp = (scrollView.contentOffset.y + 40)
+        print(disp)
+        if disp <= 0 {
+            self.navigationBarHeight = navBarActualHeight
+            self.collectionViewtopConstraint.constant = self.navigationBarHeight
+            navBar.setUpNavTitle(title: "News")
+            //navigationBarHeight = navBarActualHeight
+            //collectionViewtopConstraint.constant = navigationBarHeight
+        } else {
+            self.navigationBarHeight = max(self.navigationBarHeight - disp, statusBarHeight)
+            self.collectionViewtopConstraint.constant = self.navigationBarHeight
+            navBar.setUpNavTitle(title: "News", color: .white, shouldShow: false)
+            //navigationBarHeight = max(navigationBarHeight - disp, statusBarHeight)
+            //collectionViewtopConstraint.constant = navigationBarHeight
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        animateNavBar(scrollView)
+        
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+//       animateNavBar(scrollView)
 
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        animateNavBar(scrollView)
+    }
 }
 

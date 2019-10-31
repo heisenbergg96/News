@@ -24,6 +24,7 @@
 		DFE5C0652366E4CC00CDD939 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE5C0642366E4CC00CDD939 /* NavigationBar.swift */; };
 		DFE5C0672366E53000CDD939 /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE5C0662366E53000CDD939 /* NavigationBar.xib */; };
 		DFEE2C1423699BF300282BA3 /* NewsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE2C1323699BF300282BA3 /* NewsFlowLayout.swift */; };
+		DFEE2C162369E78900282BA3 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE2C152369E78900282BA3 /* BaseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DFE5C0642366E4CC00CDD939 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		DFE5C0662366E53000CDD939 /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		DFEE2C1323699BF300282BA3 /* NewsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFlowLayout.swift; sourceTree = "<group>"; };
+		DFEE2C152369E78900282BA3 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DF1DB02223016B8A000CBE79 /* HomeViewController.swift */,
+				DFEE2C152369E78900282BA3 /* BaseVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				DF450C3F2302B4DC00ED8E02 /* NewsError.swift in Sources */,
 				DFE5C0652366E4CC00CDD939 /* NavigationBar.swift in Sources */,
 				DF1DB03823016C62000CBE79 /* Service.swift in Sources */,
+				DFEE2C162369E78900282BA3 /* BaseVC.swift in Sources */,
 				DF1DB02923016B8A000CBE79 /* News.xcdatamodeld in Sources */,
 				DFEE2C1423699BF300282BA3 /* NewsFlowLayout.swift in Sources */,
 				DF5562F9230BF57900B6E655 /* Observable.swift in Sources */,

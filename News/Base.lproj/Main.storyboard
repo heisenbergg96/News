@@ -67,7 +67,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="10"/>
+                                                <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -93,6 +93,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8T7-OB-eid"/>
                     <connections>
+                        <outlet property="collectionViewtopConstraint" destination="EWZ-ya-8Bv" id="XlM-Dw-sdM"/>
                         <outlet property="newsCollectionView" destination="Ya6-18-XLB" id="4gG-V8-HiS"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@ class NewsCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -26,13 +27,16 @@ class NewsCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        dropShadow(color: .black, opacity: 1, offSet: CGSize(width: 5, height: 5), radius: 5)
     }
     
     fileprivate func configureCell() {
         
-        layer.borderColor = UIColor.clear.cgColor
-        layer.cornerRadius = 4
-        backgroundColor = .white
+        //layer.borderColor = UIColor.clear.cgColor
+//        layer.cornerRadius = 4
+        //contentView.layer.cornerRadius = 4
+//        backgroundColor = .white
+        //contentView.layer.masksToBounds = false
     }
     
     func setupCell(viewModel: Article?) {
@@ -52,5 +56,22 @@ class NewsCell: UICollectionViewCell {
         
         return layoutAttributes
     }
+    
+    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        
+//        contentView.layer.borderWidth = 0
+//        contentView.layer.cornerRadius = 4
+//        contentView.clipsToBounds = true
+        
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        layer.masksToBounds = false
+        layer.borderWidth = 0
+        
 
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+        
+    }
 }

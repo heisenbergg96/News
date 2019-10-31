@@ -51,6 +51,7 @@ class NavigationBar: UIView {
         navBarTitleImageView.isHidden = true
         navBarTitle.textColor = color
         navBarTitle.text = "News"
+        navBarTitle.font = UIFont.systemFont(ofSize: 20, weight: .regular)
     }
     
     func setUpNavImage(image: UIImage, color: UIColor = UIColor.white) {
