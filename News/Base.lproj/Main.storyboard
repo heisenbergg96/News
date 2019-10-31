@@ -25,63 +25,14 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewsCell" id="Urd-hS-Gyl" customClass="NewsCell" customModule="News" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-1024" translatesAutoresizingMaskIntoConstraints="NO" id="bhm-fW-4Bw">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="150" id="br7-eg-FMF"/>
-                                                    </constraints>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 Sep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE5-Vt-qAs">
-                                                    <rect key="frame" x="28" y="207" width="319" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The description goes here." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhq-JV-K0Q">
-                                                    <rect key="frame" x="28" y="170" width="319" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                    <color key="textColor" red="0.29411764705882354" green="0.29411764705882354" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="bhm-fW-4Bw" secondAttribute="trailing" id="7p8-gX-r5l"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Xhq-JV-K0Q" secondAttribute="trailing" constant="20" id="BXS-Mf-jqZ"/>
-                                            <constraint firstItem="bhm-fW-4Bw" firstAttribute="top" secondItem="Urd-hS-Gyl" secondAttribute="top" id="XGt-ox-8bX"/>
-                                            <constraint firstItem="Xhq-JV-K0Q" firstAttribute="top" secondItem="bhm-fW-4Bw" secondAttribute="bottom" constant="20" id="f48-ui-WHy"/>
-                                            <constraint firstItem="bhm-fW-4Bw" firstAttribute="leading" secondItem="Urd-hS-Gyl" secondAttribute="leading" id="nfE-7r-7Yv"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="JE5-Vt-qAs" secondAttribute="trailing" constant="20" id="nvW-Eo-gcP"/>
-                                            <constraint firstItem="JE5-Vt-qAs" firstAttribute="top" secondItem="Xhq-JV-K0Q" secondAttribute="bottom" constant="20" id="sBE-fW-V0R"/>
-                                            <constraint firstItem="Xhq-JV-K0Q" firstAttribute="leading" secondItem="Urd-hS-Gyl" secondAttribute="leadingMargin" constant="20" id="veh-bg-MRA"/>
-                                            <constraint firstItem="JE5-Vt-qAs" firstAttribute="leading" secondItem="Urd-hS-Gyl" secondAttribute="leadingMargin" constant="20" id="x0X-Tb-fqa"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="JE5-Vt-qAs" id="07i-i0-DTd"/>
-                                            <outlet property="descriptionLabel" destination="Xhq-JV-K0Q" id="T6g-qC-5ZB"/>
-                                            <outlet property="imageView" destination="bhm-fW-4Bw" id="666-GK-866"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="kij-KC-Z5x"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="p45-T9-Ro2"/>
                                 </connections>
                             </collectionView>
                         </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EWZ-ya-8Bv"/>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Okg-8b-ffv"/>
@@ -101,7 +52,4 @@
             <point key="canvasLocation" x="-3039" y="-470"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Icon-1024" width="1024" height="537"/>
-    </resources>
 </document>

@@ -19,10 +19,11 @@ class HomeViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        newsCollectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
         newsCollectionView.contentInset = UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
         newsCollectionView.setCollectionViewLayout(NewsCellLayout(), animated: false)
         navBar.setUpNavTitle(title: "News")
-        
+        navBar.addshadow(offSet: CGSize(width: 0, height: 5))
         collectionViewtopConstraint.constant = navigationBarHeight
         newsViewModel.newsListViewModel.addObserver(fireNow: false) { [weak self] (_) in
             
@@ -43,7 +44,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCell", for: indexPath) as? NewsCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
             return UICollectionViewCell()
         }
         

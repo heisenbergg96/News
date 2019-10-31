@@ -1,4 +1,12 @@
 //
+//  NewsCollectionViewCell.swift
+//  News
+//
+//  Created by Vikhyath on 31/10/19.
+//  Copyright © 2019 Vikhyath. All rights reserved.
+//
+
+//
 //  NewsCell.swift
 //  News
 //
@@ -8,17 +16,17 @@
 
 import UIKit
 
-class NewsCell: UICollectionViewCell {
+class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var publishedDateLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     var article: Article?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -27,22 +35,13 @@ class NewsCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        dropShadow(color: .black, opacity: 1, offSet: CGSize(width: 5, height: 5), radius: 5)
-    }
-    
-    fileprivate func configureCell() {
-        
-        //layer.borderColor = UIColor.clear.cgColor
-//        layer.cornerRadius = 4
-        //contentView.layer.cornerRadius = 4
-//        backgroundColor = .white
-        //contentView.layer.masksToBounds = false
+        dropShadow1(color: .black, opacity: 1, offSet: CGSize(width: 5, height: 5), radius: 5)
     }
     
     func setupCell(viewModel: Article?) {
         
-        descriptionLabel.text = viewModel?.description
-        dateLabel.text = viewModel?.publishedAt
+        titleLabel.text = viewModel?.description
+        publishedDateLabel.text = viewModel?.publishedAt
         imageView.download(from: viewModel?.urlToImage)
     }
     
@@ -51,21 +50,21 @@ class NewsCell: UICollectionViewCell {
         //setNeedsLayout()
         layoutIfNeeded()
         var frame = layoutAttributes.frame
-        frame.size.height = descriptionLabel.frame.height + 230
+        frame.size.height = titleLabel.frame.height + 230
         layoutAttributes.frame = frame
         
         return layoutAttributes
     }
     
-    func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+    func dropShadow1(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
         
         layer.shadowColor = color.cgColor
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.5
         layer.shadowOffset = offSet
         layer.shadowRadius = radius
         layer.borderWidth = 0
-        layer.cornerRadius = 10
-        layer.masksToBounds = false
-        
+        backgroundColor = .clear
+        containerView.layer.cornerRadius = 10
+        containerView.layer.masksToBounds = true
     }
 }

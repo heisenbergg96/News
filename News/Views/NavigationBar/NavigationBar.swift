@@ -32,18 +32,49 @@ class NavigationBar: UIView {
     
     weak var delegate: NavBarDelegate?
     
+    let shadowView: UIView = {
+        
+        let sv = UIView()
+        sv.backgroundColor = .lightGray
+        return sv
+        
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         backgroundColor = UIColor.red
     }
     
-    func setWhiteNavbarBackgroundColor(requireShadow: Bool = true) {
-        backgroundColor = UIColor.white
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.addshadow(offSet: CGSize(width: 0, height: 5))
+        //dropShadow(color: .black, offSet: CGSize(width: 10, height: 0))
+    }
+    
+    func addshadow(color: UIColor = .red, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 5) {
         
-//        if requireShadow {
-//            addShadowedImageView()
-//        }
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = offSet
+        layer.masksToBounds = false
+        layer.shadowRadius = radius
+        layer.borderWidth = 0
+    }
+    
+    func setWhiteNavbarBackgroundColor(requireShadow: Bool = true) {
+        //backgroundColor = UIColor.white
+        
+        if requireShadow {
+            addShadowedImageView()
+        }
+    }
+    
+    func addShadowedImageView() {
+        
+        shadowView.frame = CGRect(x: -5, y: -4, width: frame.size.width + 10, height: frame.size.height + 10)
+        addSubview(shadowView)
+        sendSubviewToBack(shadowView)
     }
     
     func setUpNavTitle(title: String, color: UIColor = UIColor.white, shouldShow: Bool = true) {
