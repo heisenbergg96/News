@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-18-XLB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="612"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iz9-NW-Xdw" customClass="NewsCellLayout" customModule="News" customModuleProvider="target">
                                     <size key="itemSize" width="375" height="245"/>
@@ -31,25 +31,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="p45-T9-Ro2"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71r-Xt-bWh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="1sY-o7-4KS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ya6-18-XLB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EWZ-ya-8Bv"/>
+                            <constraint firstItem="71r-Xt-bWh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I94-wf-MFG"/>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Okg-8b-ffv"/>
                             <constraint firstItem="Ya6-18-XLB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBi-yg-4oh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="71r-Xt-bWh" secondAttribute="trailing" id="oC9-hF-sg5"/>
                             <constraint firstAttribute="bottom" secondItem="Ya6-18-XLB" secondAttribute="bottom" id="syi-MO-jPn"/>
+                            <constraint firstItem="Ya6-18-XLB" firstAttribute="top" secondItem="71r-Xt-bWh" secondAttribute="bottom" id="xfe-K7-uo2"/>
+                            <constraint firstItem="71r-Xt-bWh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xgO-Wo-vMD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="8T7-OB-eid"/>
                     <connections>
-                        <outlet property="collectionViewtopConstraint" destination="EWZ-ya-8Bv" id="XlM-Dw-sdM"/>
+                        <outlet property="collectionViewtopConstraint" destination="xgO-Wo-vMD" id="AxJ-8G-Ni2"/>
+                        <outlet property="filterCollectionViewContainer" destination="71r-Xt-bWh" id="1RY-Qd-cZ6"/>
                         <outlet property="newsCollectionView" destination="Ya6-18-XLB" id="4gG-V8-HiS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3039" y="-470"/>
+            <point key="canvasLocation" x="-3039.1999999999998" y="-470.01499250374815"/>
         </scene>
     </scenes>
 </document>

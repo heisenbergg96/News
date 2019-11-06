@@ -22,20 +22,24 @@ class NewsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var publishedDateLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var favButton: UIButton!
     
     var article: Article?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         dropShadow1(color: .black, opacity: 1, offSet: CGSize(width: 5, height: 5), radius: 5)
+        contentView.isUserInteractionEnabled = false
     }
     
     func setupCell(viewModel: Article?) {
@@ -67,4 +71,11 @@ class NewsCollectionViewCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 10
         containerView.layer.masksToBounds = true
     }
+
+    @IBAction func favButtonTapped(_ sender: UIButton, forEvent event: UIEvent) {
+        print("Fav button tapped!!")
+        
+        favButton.setImage(UIImage(named: "icons8-heart-80"), for: .normal)
+    }
+    
 }

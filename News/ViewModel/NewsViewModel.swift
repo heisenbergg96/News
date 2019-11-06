@@ -14,7 +14,7 @@ class NewsViewModel {
     
     init() {
         
-        Service().fetchNews(country: .India) { [weak self] (error, news) in
+        Service().fetchNews(country: .Australia) { [weak self] (error, news) in
             
             guard let articles = news?.articles else { return }
             self?.newsListViewModel.value = articles
