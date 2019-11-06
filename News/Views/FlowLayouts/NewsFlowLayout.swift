@@ -1,8 +1,8 @@
 //
-//  NewsLayout.swift
+//  NewsFlowLayout.swift
 //  News
 //
-//  Created by Vikhyath on 13/08/19.
+//  Created by Vikhyath on 30/10/19.
 //  Copyright © 2019 Vikhyath. All rights reserved.
 //
 
@@ -20,3 +20,4 @@ class NewsCellLayout: UICollectionViewFlowLayout {
         super.init(coder: aDecoder)
     }
 }
+
