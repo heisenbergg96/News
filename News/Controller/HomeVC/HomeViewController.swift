@@ -20,15 +20,16 @@ class HomeViewController: BaseVC {
     let filterCollectionView = FilterView()
     var filterView = FilterCollectionView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setviews()
         newsCollectionView.register(UINib(nibName: "NewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewsCollectionViewCell")
-        newsCollectionView.contentInset = UIEdgeInsets(top: 40, left: 20, bottom: 20, right: 20)
+        newsCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
         newsCollectionView.setCollectionViewLayout(NewsCellLayout(), animated: false)
         navBar.setUpNavTitle(title: "News")
-        navBar.addshadow(offSet: CGSize(width: 0, height: 5))
+        filterCollectionViewContainer.dropShadow2(color: .darkGray, opacity: 0, offSet: CGSize(width: 0, height: 15))
         collectionViewtopConstraint.constant = navigationBarHeight
         newsViewModel.newsListViewModel.addObserver(fireNow: false) { [weak self] (_) in
             
@@ -36,17 +37,18 @@ class HomeViewController: BaseVC {
                 self?.newsCollectionView.reloadData()
             }
         }
-        
+        newsViewModel.fetchFilterContent()
+        newsViewModel.fetchNews(type: .India)
     }
     
     func setviews() {
         
         guard let filview = FilterCollectionView.instanceFromNib() as? FilterCollectionView else { return }
         filterView = filview
-        
+        filterView.dataSource = self
+        filterView.delegate = self
         filterCollectionViewContainer.addSubview(filterView)
         filterView.frame = filterCollectionViewContainer.bounds
-        
     }
 }
 
@@ -68,7 +70,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     fileprivate func animateNavBar(_ scrollView: UIScrollView) {
-        let disp = (scrollView.contentOffset.y + 40)
+        
+        let disp = scrollView.contentOffset.y
         if disp <= 0 {
             self.navigationBarHeight = navBarActualHeight
             self.collectionViewtopConstraint.constant = self.navigationBarHeight
@@ -77,18 +80,34 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             self.navigationBarHeight = max(self.navigationBarHeight - disp, statusBarHeight)
             self.collectionViewtopConstraint.constant = self.navigationBarHeight
             navBar.setUpNavTitle(title: "News", color: .white, shouldShow: false)
-
         }
+        filterCollectionViewContainer.isShadowHidden = disp <= 0.0
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         animateNavBar(scrollView)
-        
+        let disp = scrollView.contentOffset.y
+        print(disp)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Did select")
-    }
 }
 
+extension HomeViewController: FilterViewDataSource, FilterViewDelegate {
+    
+    func filterView(filterView: FilterCollectionView, didSelect index: Int) {
+        
+        newsViewModel.fetchNews(type: newsViewModel.filterItems[index].filterString)
+    }
+    
+    func filterView(numberOfItemsin filterView: FilterCollectionView) -> Int {
+        
+        return newsViewModel.filterItems.count
+    }
+    
+    func filterView(filterView: FilterCollectionView, filterStringAtIndex: Int) -> Filter {
+        
+        return newsViewModel.filterItems[filterStringAtIndex]
+    }
+
+}

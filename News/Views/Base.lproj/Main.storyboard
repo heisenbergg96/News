@@ -18,7 +18,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-18-XLB">
                                 <rect key="frame" x="0.0" y="55" width="375" height="612"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iz9-NW-Xdw" customClass="NewsCellLayout" customModule="News" customModuleProvider="target">
                                     <size key="itemSize" width="375" height="245"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

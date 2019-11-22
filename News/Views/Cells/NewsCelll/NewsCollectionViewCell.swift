@@ -45,8 +45,8 @@ class NewsCollectionViewCell: UICollectionViewCell {
     func setupCell(viewModel: Article?) {
         
         titleLabel.text = viewModel?.description
-        publishedDateLabel.text = viewModel?.publishedAt
-        imageView.download(from: viewModel?.urlToImage)
+        publishedDateLabel.text = viewModel?.id
+        imageView.download(from: viewModel?.url)
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {

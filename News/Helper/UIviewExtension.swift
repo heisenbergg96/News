@@ -63,13 +63,27 @@ extension UIView {
        
     }
     
-//    func setSize(to viewSize: CGSize) {
-//        
-//        widthAnchor.constraint(equalToConstant: viewSize.width)
-//        heightAnchor.constraint(equalToConstant: viewSize.height)
-//    }
-    
     class func instanceFromNib() -> UIView? {
         return UINib(nibName: String(describing: self), bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? UIView
+    }
+    
+    func dropShadow2(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 15, scale: Bool = true) {
+        
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        layer.borderWidth = 0
+    }
+    
+    var isShadowHidden: Bool {
+        
+        set(newValue) {
+            layer.shadowOpacity = newValue ? 0 : 0.3
+        }
+        
+        get {
+            return layer.shadowOpacity == 0.0
+        }
     }
 }

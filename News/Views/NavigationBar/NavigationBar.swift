@@ -48,7 +48,7 @@ class NavigationBar: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.addshadow(offSet: CGSize(width: 0, height: 5))
+        //self.addshadow(offSet: CGSize(width: 0, height: 5))
         //dropShadow(color: .black, offSet: CGSize(width: 10, height: 0))
     }
     

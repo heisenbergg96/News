@@ -10,34 +10,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="center" id="iN0-l3-epB" customClass="FilterCell" customModule="News" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+            <rect key="frame" x="0.0" y="0.0" width="98" height="69"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E15-oO-A2Z">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+                    <rect key="frame" x="0.0" y="0.0" width="98" height="69"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JbD-1u-YDV">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPORTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-dE-22N">
-                                    <rect key="frame" x="0.0" y="61.5" width="207" height="13.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R16-0i-muH">
-                                    <rect key="frame" x="207" y="20" width="207" height="96"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </imageView>
-                            </subviews>
-                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SPORTS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-dE-22N">
+                            <rect key="frame" x="10" y="26.5" width="53" height="16"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-checkmark-500" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R16-0i-muH">
+                            <rect key="frame" x="73" y="24.5" width="20" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="KAn-dH-2q7"/>
+                                <constraint firstAttribute="width" constant="20" id="Zzl-i6-q6J"/>
+                            </constraints>
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="bold"/>
+                        </imageView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JbD-1u-YDV" secondAttribute="trailing" id="GJl-kp-BKt"/>
-                        <constraint firstItem="JbD-1u-YDV" firstAttribute="top" secondItem="E15-oO-A2Z" secondAttribute="top" id="PY5-ph-beb"/>
-                        <constraint firstItem="JbD-1u-YDV" firstAttribute="leading" secondItem="E15-oO-A2Z" secondAttribute="leading" id="cTm-Sd-peW"/>
-                        <constraint firstAttribute="bottom" secondItem="JbD-1u-YDV" secondAttribute="bottom" id="rQV-mL-Pz1"/>
+                        <constraint firstItem="5AV-dE-22N" firstAttribute="centerY" secondItem="E15-oO-A2Z" secondAttribute="centerY" id="IqH-Ly-NkB"/>
+                        <constraint firstItem="R16-0i-muH" firstAttribute="leading" secondItem="5AV-dE-22N" secondAttribute="trailing" constant="10" id="h4F-Sb-Wfk"/>
+                        <constraint firstItem="R16-0i-muH" firstAttribute="centerY" secondItem="E15-oO-A2Z" secondAttribute="centerY" id="iHJ-pa-Ebj"/>
+                        <constraint firstItem="5AV-dE-22N" firstAttribute="leading" secondItem="E15-oO-A2Z" secondAttribute="leading" constant="10" id="iea-eh-lgv"/>
+                        <constraint firstItem="R16-0i-muH" firstAttribute="centerY" secondItem="5AV-dE-22N" secondAttribute="centerY" id="yy4-V6-XW5"/>
                     </constraints>
                 </view>
             </subviews>
@@ -53,7 +55,10 @@
                 <outlet property="filterImageView" destination="R16-0i-muH" id="53o-MB-wNA"/>
                 <outlet property="filterLabel" destination="5AV-dE-22N" id="JTb-tO-Tj2"/>
             </connections>
-            <point key="canvasLocation" x="-230.43478260869566" y="-93.080357142857139"/>
+            <point key="canvasLocation" x="78" y="-6"/>
         </view>
     </objects>
+    <resources>
+        <image name="icons8-checkmark-500" width="500" height="500"/>
+    </resources>
 </document>

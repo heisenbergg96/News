@@ -11,14 +11,23 @@ import Foundation
 class NewsViewModel {
     
     var newsListViewModel = Observable<[Article]>(value: [])
+    var filterItems: [Filter] = []
     
-    init() {
+    func fetchNews(type: Country) {
         
-        Service().fetchNews(country: .Australia) { [weak self] (error, news) in
+        Service().fetchNews(country: type) { [weak self] (error, news) in
             
             guard let articles = news?.articles else { return }
+            self?.newsListViewModel.value.removeAll()
             self?.newsListViewModel.value = articles
             
         }
     }
+    
+    func fetchFilterContent() {
+        
+        let array = [Filter(isSelected: true, filterString: .Australia), Filter(isSelected: false, filterString: .India), Filter(isSelected: false, filterString: .UK)]
+        filterItems.append(contentsOf: array)
+    }
+    
 }

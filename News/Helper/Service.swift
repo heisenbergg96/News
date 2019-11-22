@@ -13,14 +13,26 @@ enum Country: String {
     case India = "google-news-in"
     case Australia = "google-news-au"
     case UK = "google-news-uk"
+    
+    var description: String {
+        
+        switch self {
+        case .India:
+            return "INDIA"
+        case .Australia:
+            return "AUSTRALIA"
+        case .UK:
+            return "ENGLAND"
+        }
+    }
 }
 
 class Service {
     
     func fetchNews(country: Country, completionHandler: @escaping (Error?, News?) -> Void) {
-        
-        let urlString = "https://newsapi.org/v2/top-headlines?sources=\(country.rawValue)&apiKey=785a243b336b4aa79fa788a0473699a5"
-        
+        //"https://newsapi.org/v2/top-headlines?sources=\(country.rawValue)&apiKey=785a243b336b4aa79fa788a0473699a5"
+        let urlString =
+            "https://newsapi.org/v2/sources?apiKey=785a243b336b4aa79fa788a0473699a5"
         guard let url = URL(string: urlString) else {
             completionHandler(NewsError.urlError, nil)
             return
